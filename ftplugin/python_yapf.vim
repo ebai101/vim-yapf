@@ -50,7 +50,11 @@ if !exists("Yapf(...)")
             execute 'normal! ' . current_line . 'G'
             " restore cursor position
             call setpos('.', current_cursor)
+            " print errors
             silent new
+            silent resize 10
+            setlocal buftype=nofile
+            setlocal bufhidden=hide
             silent put a
         end
     endfunction
